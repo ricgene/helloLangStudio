@@ -28,17 +28,15 @@ async def main():
     
     # 2. Create thread (required for this SDK version)
     thread = await client.threads.create()
-    
-    # 3. Create run
+
     run = await client.runs.create(
-        assistant_id="contractor_workflow",
-        thread_id=thread["thread_id"],
-        input={
-            "messages": [{
-                "role": "user",
-                "content": json.dumps(data)
-            }]
-        }
+    assistant_id="contractor_workflow",
+    thread_id=thread["thread_id"],
+    input={
+        "customer": data["customer"],
+        "task": data["task"],
+        "vendor": data["vendor"]
+    }
     )
     
     print(f"Run ID: {run['run_id']}")
