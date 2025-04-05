@@ -9,6 +9,9 @@ langchain-community = "^0.3.21"
 pydantic = ">=2.0"
 langgraph-cli = {extras = ["inmem"], version = "^0.1.89"}
 langchain-openai = "^0.3.12"
+requests = "^2.32.3"
+langgraph-sdk = "^0.1.61"
+debugpy = "^1.8.13"
 
 
 [build-system]
